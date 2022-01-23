@@ -39,8 +39,12 @@
         }
     
     .head-font{
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 25px;       
+        font-family: Arial, Helvetica, sans-serif;           
+        font-size: 20px; 
+        color:white; 
+        background-color: #944f29; 
+        padding: 9px 17px; 
+        border: none;   
         }
     
     .second-font{
@@ -81,7 +85,8 @@
 <body>
     
 <nav class="navbar navbar-expand-lg container" aria-label="breadcrumb">    
-    <div class="navbar-brand head-brand" style="margin-left: 50px;">tease</div>          
+    <div class="navbar-brand head-brand" style="margin-left: 50px;">tease</div> 
+                       
         <div class="collapse navbar-collapse" style="display: flex; justify-content: center; align-items: center;">
             <ul class="navbar-nav menu-navbar breadcrumb">
                 <li class="nav-item breadcrumb-item" style="padding: 30px; display: flex; justify-content: center; align-items: center;"><a href="home.html">HOME</a></li>
@@ -125,11 +130,18 @@
     </div>
         <br>        
     <div style="text-align: right; margin-right: 50px; color: white;">
-        <div class="head-font">INTRODUCING</div>
+        <div style="font-family: Arial, Helvetica, sans-serif; font-size: 25px;">INTRODUCING</div>
             <div class="second-font"><b>After Party:</b></div>
-                <div class="head-font" style="font-size: 28px; padding: 10px;">focus on the day ahead of last night.</div>
-                    <button class="btn head-font" style="font-size: 20px; color:white; background-color: #944f29; padding: 9px 17px; border: none;">SHOP NOW</button>
-    </div>
+                <div style="font-size: 28px; padding: 10px; font-family: Arial, Helvetica, sans-serif;">focus on the day ahead of last night.</div>
+                    <button class="btn head-font" onclick="changeText(this)">SHOP NOW</button>    
+                            <script>
+                                function changeText(id) {
+                                id.innerHTML = "THANK YOU FOR SHOPPING!"; }                                
+                            </script>
+
+
+    
+                </div>
 </div>
 
 <div class="h-2">
@@ -426,9 +438,18 @@
             <div>Give us some feedback to improve our quality and service!</div><br>
                 <form> 
                     Feedback:
-                    <textarea type="text" style="width: 50%;" class="form-control" placeholder="enter your feedback" rows="5"></textarea> <br>                    
+                    <textarea type="text" id="change-text" onchange="upperCase()" style="width: 50%;" class="form-control" placeholder="enter your feedback" rows="5"></textarea> <br>                                        
+                            <script>
+                                function upperCase() {
+                                const x = document.getElementById("change-text");
+                                x.value = x.value.toUpperCase(); }                   
+                            </script>
                     Email: <br>                    
-                    <input type="text" style="width: 46%;" placeholder=" enter your email address"> <br><br>
+                    <input type="text" id="keypress" onkeypress="changeColor()" style="width: 46%;" placeholder=" enter your email address"> <br><br>
+                            <script>
+                                function changeColor() {
+                                document.getElementById("keypress").style.backgroundColor = "pink"; }
+                            </script>
                     <button class="btn btn-light">Submit</button>
                 </form>
             </div>
